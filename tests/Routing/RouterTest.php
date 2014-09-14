@@ -20,6 +20,6 @@ class RouterTest extends PHPUnit_Framework_TestCase {
     {
         $this->assertInstanceOf('Gravitano\Routing\Router', $this->router);
     }
-    
+
 }
  
