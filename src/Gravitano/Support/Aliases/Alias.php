@@ -1,6 +1,7 @@
 <?php namespace Gravitano\Support\Aliases;
 
 use Gravitano\Foundation\Application;
+use Instantiator\Exception\InvalidArgumentException;
 
 abstract class Alias {
 
@@ -16,7 +17,10 @@ abstract class Alias {
 		return static::$app;
 	}
 
-    abstract protected static function getComponentName();
+    protected static function getComponentName()
+    {
+        throw new InvalidArgumentException("Please provide a correct component alias name.");
+    }
 
     public static function __callStatic($name, $arguments)
     {
