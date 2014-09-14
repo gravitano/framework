@@ -26,6 +26,26 @@ class Router {
 		$this->register(__FUNCTION__, $uri, $action, $options);
 	}
 
+    public function post($uri, $action, array $options = [])
+    {
+        $this->register(__FUNCTION__, $uri, $action, $options);
+    }
+
+    public function put($uri, $action, array $options = [])
+    {
+        $this->register(__FUNCTION__, $uri, $action, $options);
+    }
+
+    public function patch($uri, $action, array $options = [])
+    {
+        $this->register(__FUNCTION__, $uri, $action, $options);
+    }
+
+    public function delete($uri, $action, array $options = [])
+    {
+        $this->register(__FUNCTION__, $uri, $action, $options);
+    }
+
 	public function run()
 	{
 		foreach ($this->collections as $route)
