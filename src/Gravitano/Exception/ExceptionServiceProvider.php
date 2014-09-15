@@ -1,5 +1,7 @@
 <?php namespace Gravitano\Exception;
 
+use Whoops\Run;
+use Whoops\Handler\PrettyPageHandler;
 use Gravitano\Support\ServiceProvider;
 
 class ExceptionServiceProvider extends ServiceProvider {
@@ -8,7 +10,7 @@ class ExceptionServiceProvider extends ServiceProvider {
 	{
 		$whoops = $this->app['exception'];
 		
-		$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+		$whoops->pushHandler(new PrettyPageHandler);
 		
 		$whoops->register();	
 	}
@@ -17,7 +19,7 @@ class ExceptionServiceProvider extends ServiceProvider {
 	{
 		$this->app->register('exception', function ($app)
 		{
-			return new \Whoops\Run;
+			return new Run;
 		});	
 	}
 
