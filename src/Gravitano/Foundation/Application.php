@@ -93,4 +93,14 @@ class Application implements ArrayAccess {
         $provider->boot();
     }
 
+    public function boot()
+    {
+        $providers = $this['config']->get('app.providers');
+
+        foreach($providers as $provider)
+        {
+            $this->bootProvider($provider);
+        }
+    }
+
 }

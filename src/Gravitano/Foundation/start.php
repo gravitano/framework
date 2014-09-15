@@ -16,4 +16,6 @@ $app->register('config', function ($app)
 
 $app->registerCoreProviders();
 
+$app->boot();
+
 require $app['path']['app'] . '/Http/routes.php';
